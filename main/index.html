@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="output.css">
+</head>
+
+<body>
+    <nav class=" h-16 bg-blue-700 text-white">
+        <div class="w-4/5 m-auto flex flex-row justify-between items-center">
+            <div>
+                <div class="font-bold font-serif">BMI</div>
+            </div>
+            <div>Contact</div>
+        </div>
+    </nav>
+    <main class="my-4 p-4 mx-auto bg-neutral-400 w-4/5 border-2 border-red-950">
+        <form action="" class="w-3/5 my-4 pt-20 mx-auto rounded-xl bg-neutral-300 p-4 border-2 border-stone-900 flex flex-col items-center">           
+            <div class="m-2">
+                <label class="text-lg" for="age">Calculate BMI for</label>
+                <select class="p-1 rounded-md border-2 border-black" name="age" id="age">
+                    <option value="Adult">Adult age 20+</option>
+                    <option value="child">Child age 2-19</option>
+                </select>
+            </div>
+            <div class="m-2">
+                <label class="text-lg" for="weight">Weight:</label>
+                <input class="p-1 rounded-md border-2 border-black" id="weight" type="number" name="weight"
+                    placeholder="Enter your weight" min="0" required />
+                <select class="p-1 m-2 rounded-md border-2 border-black" name="weight_unit" id="weight_unit">
+                    <option value="pound">pounds</option>
+                    <option value="kilogram">kilograms</option>
+                    <option value="stone">stones</option>
+                </select>
+            </div>
+            <div class="m-2">
+                <label class="text-lg" for="height">Height:</label>
+                <input class="p-1 rounded-md border-2 border-black" id="height" type="number" name="height"
+                    placeholder="Enter your height" min="0" required />
+                <select class="p-1 m-2 rounded-md border-2 border-black" name="height_unit" id="height_unit">
+                    <option value="feet">feet</option>
+                    <option value="inche">inches</option>
+                    <option value="centimeter">centimeters</option>
+                    <option value="meter">meters</option>
+                </select>
+            </div>
+            <div class=" flex justify-center">
+                <button id="button" class="border-2 p-1 m-2 bg-green-900 text-white rounded-md border-black">calculate</button>
+            </div>
+            <div class="result items-center">
+                <div class="font-semibold text-lg text-amber-700" id="result_bmi"></div>
+                <div class="font-semibold text-lg text-amber-700" id="result_status"></div>
+            </div>
+            <div>
+                <h2 class="text-lg font-semibold mb-2 mt-6">CDC Adult BMI Categories</h2>
+                <div class="overflow-x-auto">
+                    <table class="min-w-full bg-white border border-black">
+                        <thead>
+                            <tr class="bg-gray-400">
+                                <th class="py-2 px-4 border border-black">BMI</th>
+                                <th class="py-2 px-4 border border-black">Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="bg-orange-200">
+                                <td class="py-2 px-4 border border-black">≤ 18.4</td>
+                                <td class="py-2 px-4 border border-black">Underweight</td>
+                            </tr>
+                            <tr class="bg-green-400">
+                                <td class="py-2 px-4 border border-black">18.5 - 24.9</td>
+                                <td class="py-2 px-4 border border-black">Normal</td>
+                            </tr>
+                            <tr class="bg-orange-400">
+                                <td class="py-2 px-4 border border-black">25.0 - 39.9</td>
+                                <td class="py-2 px-4 border border-black">Overweight</td>
+                            </tr>
+                            <tr class="bg-red-600">
+                                <td class="py-2 px-4 border border-black">≥ 40.0</td>
+                                <td class="py-2 px-4 border border-black">Obese</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </form>
+        <div>
+            <div class=" flex flex-col gap-2 text-lg">
+                <h1 class="text-2xl font-bold">What is BMI?</h1>
+                <p>The body mass index or BMI is a ratio of mass to height. It is calculated as kg per square meter or
+                    pounds per square inch of height. Numeric BMI values correspond to weight categories including
+                    underweight, normal, overweight and obese.</p>
+                <p>BMI is used as an indicator of the relative healthiness of a person. The Centers for Disease Control
+                    (CDC) and the World Health Organization (WHO) recognize that people who are overweight or
+                    underweight are at higher risk for certain health conditions. BMI also enables health professionals
+                    to discuss bodyweight objectively with their patients.</p>
+            </div>
+            <div class=" flex flex-col gap-2 text-lg">
+                <h1 class="text-2xl font-bold">BMI Formulas</h1>
+                <p>Divide weight by height squared to find BMI. Note that you need to use kg and meters the standard
+                    units for the BMI formula are kg and meters. If you need other units of measure the calculator will
+                    convert among units for you.
+                </p>
+                <div class="flex flex-col items-center">
+                    <p>In metric units, using kg and meters:</p>
+
+                    <p>BMI= weight in kg / height2 in m</p>
+                    <p><span>x</span>/<span>y<sup>2</sup></span></p>
+                    <p>BMI = weight ÷ height2</p>
+
+                    <p>
+                    <ul class="list-disc">
+                        <li>In metric units: BMI = weight (kg) ÷ height2 (meters)</li>
+                        <li>In US units: BMI = weight (lb) ÷ height2 (inches) * 703</li>
+                    </ul>
+                    </p>
+                </div>
+
+            </div>
+            <div class=" flex flex-col gap-2 text-lg">
+                <h1 class="text-2xl font-bold">How to Calculate BMI?</h1>
+                <p>Using metric units, where weight is in kilograms and height is in meters, divide weight by meters squared.</p>
+                <p>In US units, where weight is in pounds and height is in inches, divide weight by inches squared. Then multiply this figure by 703.</p>
+            </div>
+            <div class=" flex flex-col gap-2 text-lg">
+                <h1 class="text-2xl font-bold">Example 1: Calculate BMI in metric units</h1>
+                <p>Matilda weighs 64 kg and is 1.9 meters tall. What is her BMI?</p>
+                <p>Divide 64 by 1.92</p>
+                <ul class="mx-6 list-disc">
+                    <li>BMI = w ÷ h2</li>
+                    <li>BMI = 64 ÷ 1.92</li>
+                    <li>BMI = 64 ÷ 3.61</li>
+                    <li>BMI = 17.7</li>
+                </ul>
+            </div>
+            <div class=" flex flex-col gap-2 text-lg">
+                <h1 class="text-2xl font-bold">References</h1>
+                <ul class="list-disc mx-6"> 
+                    <li><a class="text-blue-700 underline" href="https://en.wikipedia.org/wiki/Body_mass_index">"Body Mass Index"</a> <span>, Wikipedia, The Free Encyclopedia.</span></li>
+                    <li><a class="text-blue-700 underline" href="https://www.cdc.gov/healthyweight/assessing/bmi/Index.html">"Healthy Weight"</a> <span>, Centers for Disease Control and Prevention.</span></li>
+                    <li><a class="text-blue-700 underline" href="https://www.cdc.gov/healthyweight/assessing/bmi/childrens_bmi/about_childrens_bmi.html">"About Child and Teen BMI"</a> <span>, Centers for Disease Control and Prevention.</span></li>
+                </ul>
+            </div>
+        </div>
+    </main>
+    <footer></footer>
+    <script src="script.js"></script>
+</body>
+
+</html>
